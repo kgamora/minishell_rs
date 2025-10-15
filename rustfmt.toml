@@ -1,0 +1,16 @@
+max_width = 80
+
+# Indentation
+tab_spaces = 4
+
+# Chain formatting
+chain_width = 50
+
+# Function arguments
+fn_params_layout = "Vertical"
+
+# Imports formatting
+reorder_imports = true
+
+# Match formatting
+match_block_trailing_comma = true
