@@ -4,8 +4,8 @@ use super::token::{Token, get_string, is_stream, is_string};
 
 #[derive(Debug)]
 pub struct FileOpener {
-    token: Token,
-    file_path: String,
+    pub token: Token,
+    pub file_path: String,
 }
 
 #[derive(Debug)]
@@ -37,10 +37,11 @@ impl FileOpener {
 
 #[derive(Debug)]
 pub struct CommandBuilder {
-    argv: Vec<String>,
-    stdin: Option<FileOpener>,
-    stdout: Option<FileOpener>,
-    stderr: Option<FileOpener>,
+    pub argv: Vec<String>,
+    pub stdin: Option<FileOpener>,
+    pub stdout: Option<FileOpener>,
+    // TODO: return the field
+    pub _stderr_builder: Option<FileOpener>,
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -96,6 +97,6 @@ pub fn parse_command(tokens: &[Token]) -> Result<CommandBuilder, SyntaxError> {
         argv,
         stdin,
         stdout,
-        stderr,
+        _stderr_builder: stderr,
     })
 }
